@@ -36,7 +36,7 @@
 		             <a class="nav-link" href="about.html">About</a>
 		           </li>
 		           <li class="nav-item">
-		             <a class="nav-link" href="contact.html">Contact</a>
+                    
 		           </li>
 		         </ul>
 		       </div>
@@ -57,7 +57,6 @@
 		       </div>
 		     </div>
 		   </header>
-
 		   <!-- Main Content -->
 		   <div class="container">
 		     <div class="row">
@@ -163,5 +162,38 @@
         <script src="vendor/jquery/jquery.min.js"></script>
           <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
           <script src="js/clean-blog.min.js"></script>
+        
+        
+        
+        <form action="https://postmail.invotes.com/send"
+              method="post" id="email_form">
+
+               <input type="text" name="subject" placeholder="Subject" />
+            <textarea name="text" placeholder="Message"></textarea>
+            <input type="hidden" name="access_token" value="3ljrerv4mdhwpfsafnehqt6u" />
+          
+            <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+
+
+
+            <input id="submit_form" type="submit" value="Send" />
+            <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
+            <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
+        </form>
+
+        <!-- optional, prevents the submit button from being pressed more than once -->
+        <script>
+            var submitButton = document.getElementById("submit_form");
+            var form = document.getElementById("email_form");
+            form.addEventListener("submit", function (e) {
+                setTimeout(function() {
+                    submitButton.value = "Sending...";
+                    submitButton.disabled = true;
+                }, 1);s
+            });
+        </script> 
+
+        
 	</body>
 </html>
